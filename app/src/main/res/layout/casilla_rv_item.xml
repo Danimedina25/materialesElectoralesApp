@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="8dp"
+    android:elevation="0dp"
+    android:orientation="vertical"
+    android:layout_marginBottom="60dp"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/txt_nombre_casilla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:capitalize="sentences"
+        android:textColor="@color/quantum_black_100"
+        tools:text="Casilla"/>
+
+   <RadioGroup
+        android:id="@+id/rg_entregada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_entregada"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="Entregada" />
+
+        <RadioButton
+            android:id="@+id/rb_no_entregada"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:text="No entregada" />
+    </RadioGroup>
+    <Button
+        android:id="@+id/btn_materiales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ir a materiales"
+        android:backgroundTint="@color/quantum_white_100"
+        android:textColor="@color/seed"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:visibility="invisible"
+        app:cornerRadius="24dp" />
+
+</LinearLayout>

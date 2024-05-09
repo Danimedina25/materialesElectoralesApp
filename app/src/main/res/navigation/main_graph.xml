@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.material_electoral.MainFragment"
+        android:label="Recepción de Material Electoral"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_caelsFragment"
+            app:destination="@id/caelsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caelsFragment"
+        android:name="com.example.material_electoral.caels.ui.view.CaelsFragment"
+        android:label="CAELs"
+        tools:layout="@layout/fragment_caels" >
+        <action
+            android:id="@+id/action_caelsFragment_to_casillasFragment"
+            app:destination="@id/casillasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/casillasFragment"
+        android:name="com.example.material_electoral.caels.ui.view.CasillasFragment"
+        android:label="Casillas"
+        tools:layout="@layout/fragment_casillas">
+        <argument
+            android:name="CaelData"
+            app:argType="com.example.material_electoral.caels.domain.model.CaelModel"/>
+        <action
+            android:id="@+id/action_casillasFragment_to_materialesPorCasillaFragment"
+            app:destination="@id/materialesPorCasillaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/materialesPorCasillaFragment"
+        android:name="com.example.material_electoral.materiales.ui.MaterialesFragment"
+        android:label="Materiales"
+        tools:layout="@layout/fragment_materiales_por_casilla">
+        <argument
+            android:name="CaelData"
+            app:argType="com.example.material_electoral.caels.domain.model.CaelModel"/>
+        <argument
+            android:name="CasillaData"
+            app:argType="com.example.material_electoral.caels.domain.model.CasillaModel"/>
+    </fragment>
+
+</navigation>
